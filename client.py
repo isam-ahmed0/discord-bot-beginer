@@ -5,7 +5,7 @@ from discord import app_commands
 import asyncio
 # import threading
 import discord_webhook
-from token import *
+from bot_token import *
 import logging
 # import yt_dlp
 import os

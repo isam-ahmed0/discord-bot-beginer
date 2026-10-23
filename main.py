@@ -5,7 +5,7 @@ import logging
 from client import bot
 from gui.main import BotGUI, run_gui
 # from cli import cli
-from token import *
+from bot_token import *
 
 handler = logging.FileHandler(filename="bot.log", encoding="utf-8", mode="w")
 

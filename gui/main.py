@@ -25,11 +25,16 @@ class BotGUI:
         except Exception as e:
             print(e)
         self.window.online_type.currentTextChanged.connect(self.set_stat)
+        self.window.up_activity.clicked.connect(self.set_activity)
 
         self.window.show()
 
     def set_page(self, i):
         self.window.stackedWidget.setCurrentIndex(i)
+
+    def set_activity(self):
+        n = self.window.activity_entry.text()
+        activity(n)
     
     def set_stat(self):
         status = self.window.online_type.currentText()

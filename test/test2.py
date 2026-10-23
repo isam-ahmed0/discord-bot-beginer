@@ -1,7 +1,7 @@
 # This example requires the 'message_content' intent.
 
 import discord
-from token import *
+from bot_token import *
 
 intents = discord.Intents.default()
 intents.message_content = True
