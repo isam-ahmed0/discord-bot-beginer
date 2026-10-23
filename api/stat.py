@@ -27,5 +27,4 @@ async def activity(n):
     else:
         current_pr = None
         
-    # Send both status and activity together
     await bot.change_presence(status=current_st, activity=current_pr)

@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="stop_btn">
@@ -84,19 +84,6 @@
        <string>hi</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>110</y>
-        <width>88</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ban</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="mod">
      <widget class="QPushButton" name="kick_btn">
@@ -112,7 +99,7 @@
        <string>Kick</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="ban_btn">
       <property name="geometry">
        <rect>
         <x>130</x>

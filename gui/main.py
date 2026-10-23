@@ -3,12 +3,14 @@ import time
 import asyncio
 import os
 from core_api import api_call
+from api import mod
 from api.message import *
 from api.stat import *
 from client import bot
 from client import bot, shut
 from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
+from gui import dialog
 
 class BotGUI:
     def __init__(self):
@@ -27,6 +29,9 @@ class BotGUI:
         self.window.online_type.currentTextChanged.connect(self.set_stat)
         self.window.up_activity.clicked.connect(self.set_activity)
 
+        # The nmod things:
+        self.window.ban_btn.clicked.connect(self.ban_window)
+
         self.window.show()
 
     def set_page(self, i):
@@ -40,7 +45,25 @@ class BotGUI:
         status = self.window.online_type.currentText()
         stat_change(status)
         
+    def ban_window0(self):
+        self.kick_dialog = dialog.show("kick_dialog.ui")
 
+        guild = self.kick_dialog.guid.text().strip()
+        user = self.kick_dialog.uid.text().strip()
+        
+        self.kick_dialog.ok.clicked.connect(lambda: mod.ban(guild, user))
+        # self.kick_dialog.cancel.clicked.connect(self.)
+
+    def ban_window(self):
+        self.kick_dialog = dialog.show("kick_dialog.ui")
+
+        def submit(_checked=False):
+            guild = self.kick_dialog.guid.text().strip()
+            user = self.kick_dialog.uid.text().strip()
+            mod.ban(guild, user)
+
+        self.kick_dialog.ok.clicked.connect(submit)
+        
     def close_app(self):
         self.window.close()
 

@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands, tasks
 from discord import app_commands
 import asyncio
+# import extra.on
 # import threading
 import discord_webhook
 from bot_token import *
@@ -42,5 +43,4 @@ async def on_ready():
 
 
 if __name__ == "__main__":
-    from extra.on import *
     bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)

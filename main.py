@@ -3,9 +3,11 @@ import threading
 import time
 import logging
 from client import bot
+import extra.on
 from gui.main import BotGUI, run_gui
 # from cli import cli
 from bot_token import *
+import gui.dialog
 
 handler = logging.FileHandler(filename="bot.log", encoding="utf-8", mode="w")
 
